@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ENOTIC: Technology that matters</title>
+<meta name="description" content="ENOTIC is a technology company building meaningful products that solve real problems. Technology is the tool. Human life is the reason.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000000;
+  --white:#ffffff;
+  --grey:#6b6b6b;
+  --line:#e4e4e4;
+  --propel:#7b2ff7;
+  --pulse:#2c2a8f;
+  --font:"Sora",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--black);background:var(--white);line-height:1.65;font-size:1.05rem;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--propel);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+
+/* Hero */
+.hero{background:var(--black);color:var(--white);padding:2rem 0 5rem;min-height:92vh;display:flex;flex-direction:column}
+.nav{display:flex;justify-content:space-between;align-items:center;padding-bottom:4rem}
+.mark{display:flex;align-items:center;gap:.75rem;font-weight:800;letter-spacing:.14em;font-size:1rem;text-decoration:none}
+.mark .sq{display:grid;grid-template-columns:repeat(2,9px);gap:3px}
+.mark .sq i{display:block;width:9px;height:9px;background:var(--white)}
+.mark .sq i:nth-child(2){background:transparent;border:1.5px solid var(--white)}
+.nav ul{display:flex;gap:1.75rem;list-style:none;font-size:.9rem}
+.nav a{text-decoration:none;opacity:.8}
+.nav a:hover{opacity:1}
+.hero-body{margin-top:auto}
+.hero h1{font-weight:800;font-size:clamp(3.4rem,14vw,10rem);line-height:.95;letter-spacing:-.03em}
+.greek{margin-top:1.25rem;font-weight:300;font-size:clamp(1.1rem,2.6vw,1.6rem);color:#bdbdbd}
+.greek b{font-weight:600;color:var(--white)}
+.hero p.line{margin-top:2.5rem;max-width:34rem;font-size:clamp(1.2rem,2.4vw,1.55rem);font-weight:300;line-height:1.4}
+
+/* unity motif: separate blocks that join */
+.blocks{display:flex;gap:6px;margin-top:3.5rem}
+.blocks span{height:14px;background:var(--white);flex:1;max-width:120px;animation:join 1.6s cubic-bezier(.2,.8,.2,1) both}
+.blocks span:nth-child(1){--x:-90px}
+.blocks span:nth-child(2){--x:-30px;opacity:.75}
+.blocks span:nth-child(3){--x:40px;opacity:.5}
+.blocks span:nth-child(4){--x:110px;opacity:.3}
+@keyframes join{from{transform:translateX(var(--x));gap:0}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.blocks span{animation:none}html{scroll-behavior:auto}}
+
+/* Sections */
+section{padding:5.5rem 0}
+h2{font-weight:800;font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.12;letter-spacing:-.02em;max-width:22ch}
+.lead{margin-top:1.5rem;max-width:40rem;color:var(--grey);font-size:1.15rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.facts{border-top:2px solid var(--black)}
+.facts div{padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.facts dt{font-weight:600}
+.facts dd{color:var(--grey);margin-top:.2rem;font-size:.98rem}
+
+/* Principles band */
+.band{background:var(--black);color:var(--white)}
+.band h2{max-width:none}
+.principles{margin-top:2.5rem;display:grid;gap:1.1rem}
+.principles p{font-size:clamp(1.15rem,2.6vw,1.7rem);font-weight:300;line-height:1.35;border-left:3px solid var(--white);padding-left:1.25rem}
+
+/* Products */
+.products{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3rem}
+.product{padding:2.25rem;color:var(--white);display:flex;flex-direction:column;min-height:19rem}
+.product.propel{background:var(--propel)}
+.product.pulse{background:var(--pulse)}
+.product h3{font-size:2rem;font-weight:800;letter-spacing:-.01em}
+.product .kind{margin-top:.25rem;opacity:.85;font-size:.95rem}
+.product .tag{margin-top:1.25rem;font-size:1.2rem;font-weight:300}
+.product p{margin-top:1rem;opacity:.92;font-size:.98rem}
+.product .status{margin-top:auto;padding-top:1.5rem;font-weight:600;font-size:.95rem}
+.note{margin-top:1.75rem;color:var(--grey);max-width:44rem}
+
+/* Values */
+.values{margin-top:3rem;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--black)}
+.values div{padding:1.4rem 1.25rem 1.6rem 0;border-bottom:1px solid var(--line)}
+.values h3{font-size:1.05rem;font-weight:600}
+.values p{margin-top:.35rem;font-size:.92rem;color:var(--grey);line-height:1.5}
+
+/* Journey (a real sequence) */
+.journey{margin-top:3rem;border-left:2px solid var(--black);padding-left:0}
+.step{position:relative;padding:0 0 2rem 2rem}
+.step::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;background:var(--black)}
+.step:last-child{padding-bottom:0}
+.step h3{font-size:1.1rem;font-weight:600}
+.step p{color:var(--grey);margin-top:.2rem;font-size:.98rem}
+
+/* Footer */
+footer{background:var(--black);color:var(--white);padding:4rem 0 3rem}
+footer .big{font-weight:800;font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.02em;max-width:24ch;line-height:1.15}
+footer .small{margin-top:3rem;color:#9a9a9a;font-size:.9rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .two,.products{grid-template-columns:1fr}
+  .values{grid-template-columns:1fr 1fr}
+  .nav ul{display:none}
+  section{padding:4rem 0}
+  .hero{min-height:88vh}
+}
+@media (max-width:480px){.values{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap" style="display:flex;flex-direction:column;flex:1">
+    <nav class="nav" aria-label="Main">
+      <a class="mark" href="#top" aria-label="ENOTIC home"><span class="sq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>ENOTIC</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#journey">Journey</a></li>
+      </ul>
+    </nav>
+    <div class="hero-body" id="top">
+      <h1>ENOTIC</h1>
+      <p class="greek">From <b>Enotita</b> (Ενότητα), the Greek word for unity.</p>
+      <p class="line">Technology is the tool. Human life is the reason.</p>
+      <div class="blocks" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="about">
+    <div class="wrap two">
+      <div>
+        <h2>A technology company that builds what matters.</h2>
+        <p class="lead">ENOTIC is a technology parent company. We build meaningful products that solve real problems and make everyday life easier, one product at a time, each with a clear reason to exist.</p>
+        <p class="lead">Our mission: make impact, be successful, and make life easier for everybody with the use of technology.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Where we are</dt><dd>Founder-led and building in Nigeria, in our pre-launch period.</dd></div>
+        <div><dt>Where we start</dt><dd>Property first, with PROPEL launching in Ilesa, Nigeria.</dd></div>
+        <div><dt>Where we are going</dt><dd>A trusted ecosystem of a few excellent products, not a collection of random apps.</dd></div>
+        <div><dt>Official launch</dt><dd>2028</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Principles">
+    <div class="wrap">
+      <h2>How we work</h2>
+      <div class="principles">
+        <p>Independent products. Connected ecosystem. User-controlled data.</p>
+        <p>Problems create products. Products do not search for problems.</p>
+        <p>Build fewer things. Build them well. Solve real problems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <h2>Two products. Two different problems.</h2>
+      <p class="lead">Each product has its own identity and works on its own. They connect only where it genuinely helps the people using them.</p>
+      <div class="products">
+        <article class="product propel">
+          <h3>PROPEL</h3>
+          <p class="kind">Property technology</p>
+          <p class="tag">Find it. Build it. Live it.</p>
+          <p>A Nigerian property platform to find homes to rent or buy, land, short lets and the professionals who build them. It brings seekers, agents, owners and builders together, with a simple visual feed and structured inspection booking.</p>
+          <p class="status">In development. First launch planned for Ilesa.</p>
+        </article>
+        <article class="product pulse">
+          <h3>PULSE</h3>
+          <p class="kind">AI business assistant</p>
+          <p class="tag">Just tell Pulse what happened.</p>
+          <p>Business owners tell Pulse about their day, by text or voice, and Pulse keeps track of sales, stock, customers and what people still owe, then turns it into clear insights and reminders.</p>
+          <p class="status">In planning. Development follows PROPEL.</p>
+        </article>
+      </div>
+      <p class="note">More products will only join ENOTIC when a real problem, a strong solution and the capacity to build it all line up.</p>
+    </div>
+  </section>
+
+  <section id="values" style="background:#f6f6f6">
+    <div class="wrap">
+      <h2>What we hold ourselves to.</h2>
+      <div class="values">
+        <div><h3>Human-centered</h3><p>Technology serves people, not the other way around.</p></div>
+        <div><h3>Impact</h3><p>Products must solve genuine problems.</p></div>
+        <div><h3>Simplicity</h3><p>Complex technology, simple experiences.</p></div>
+        <div><h3>Trust</h3><p>Your data and interactions are handled with care.</p></div>
+        <div><h3>Innovation</h3><p>Always looking for better ways to solve problems.</p></div>
+        <div><h3>Ambition</h3><p>Building for long-term significance.</p></div>
+        <div><h3>Responsibility</h3><p>Built thoughtfully, ethically and with its consequences in mind.</p></div>
+        <div><h3>Excellence</h3><p>High standards in design, engineering and reliability.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="wrap">
+      <h2>The road to 2038.</h2>
+      <div class="journey">
+        <div class="step"><h3>2026 to 2028: Foundation</h3><p>Building skills, the ENOTIC brand and the first version of PROPEL, then testing it with real users.</p></div>
+        <div class="step"><h3>2028: Launch</h3><p>ENOTIC officially launches, with PROPEL reaching its first real market in Ilesa.</p></div>
+        <div class="step"><h3>2028 to 2033: Prove and establish</h3><p>Earn trust, learn from users and turn promising products into sustainable businesses. PULSE development begins.</p></div>
+        <div class="step"><h3>2033 to 2038: Expand</h3><p>Carefully add new products and build shared technology across a small ecosystem of four to six strong products.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">ENOTIC exists to build technology that matters.</p>
+    <div class="small">
+      <span>Built in Nigeria.</span>
+      <span>&copy; 2026 ENOTIC</span>
+    </div>
